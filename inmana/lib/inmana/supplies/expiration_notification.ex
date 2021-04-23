@@ -12,7 +12,7 @@ defmodule Inmana.Supplies.ExpirationNotification do
 
   defp send_email(to_email, supplies) do
     to_email
-    |> ExpirationEmail.create()
+    |> ExpirationEmail.create(supplies)
     |> Mailer.deliver_later!()
   end
 end
